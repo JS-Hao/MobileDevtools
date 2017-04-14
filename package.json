@@ -1,0 +1,17 @@
+{
+  "name": "fast-console",
+  "version": "1.0.0",
+  "description": "a fast console table shows on your mobile",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "JS-Hao",
+  "license": "ISC",
+  "devDependencies": {
+    "css-loader": "^0.28.0",
+    "style-loader": "^0.16.1",
+    "url-loader": "^0.5.8",
+    "webpack": "^2.3.3"
+  }
+}

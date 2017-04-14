@@ -1,0 +1,248 @@
+/********************** 公共部分 **************************/
+body, html {
+	width: 100%;
+	padding: 0;
+	margin: 0;
+	background: #ccc;
+}
+/* 解决屏幕过小Font Boosting引起的bug */
+body, body * {
+    max-height: 1000000px;
+}
+
+.fn-clear:after {
+	display: block;
+	clear: both;
+	content: '';
+}
+
+#tooltip {
+}
+
+
+/********************** tooltip按钮部分 **********************/
+#t-btnBox {
+	position: fixed;
+	bottom: 0;
+	right: 0;
+}
+.t-btn {
+	position: absolute;
+	top: -280px;
+	left: -120px;
+	width: 90px;
+    height: 90px;
+    padding: 0;
+    margin: 0;
+    outline: none;
+    border: none;
+    font-size: 0;
+    border-radius: 15px;
+    background-color: rgba(255, 255, 255, 0.6);
+    background-size: 80px 80px;
+    background-repeat: no-repeat;
+    background-position: center;
+    z-index: 2;
+}
+#t-btn-main {
+	background-image: url(../img/index.png);
+}
+#t-btn-console {
+	display: none;
+	background-image: url(../img/console.png);
+}
+#t-btn-network {
+	display: none;
+	background-image: url(../img/network.png);
+}
+#t-btn-element {
+	display: none;
+	background-image: url(../img/element.png);
+}
+
+
+/********************* tooltip内容部分 ***********************/
+#t-content {
+	position: fixed;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background: #fff;
+    display: none;
+    word-break: break-all;
+}
+#t-content-network, #t-content-console, #t-content-element {
+	display: none;
+}
+#t-content ul {
+	padding: 0;
+	margin: 0;
+	list-style: none;
+}
+
+/* nav */
+.t-nav {
+	float: left;
+    font-size: 0.4rem;
+}
+.t-nav a {
+	display: block;
+    height: 1.3rem;
+    line-height: 1.3rem;
+    color: #fff;
+    margin: 0 0.2rem;
+}
+.t-navBox {
+	background: #000;
+}
+#t-nav-back a {
+	background: url(../img/back.png) center/0.5rem 0.5rem no-repeat;
+    display: block;
+    font-size: 0;
+    width: 1rem;
+}
+
+
+/**************************** Console ****************************/
+.t-console header ul, .t-console header ul li, .t-console header button {
+	float: left;
+} 
+.t-console header {
+	height: 0.8rem;
+    background: #ccc;
+    width: 100%;
+}
+.t-console-btn {
+	height: 100%;
+    padding: 0;
+    margin: 0;
+    outline: none;
+    border: none;
+    font-size: 0.4rem;
+    line-height: 0.8rem;
+    padding: 0 0.2rem;
+    background: #ccc;
+}
+.t-clear {
+	background: url(../img/clear.png) center/0.45rem 0.45rem no-repeat;
+    width: 1rem;
+    margin-left: 0.2rem;
+}
+.t-console-cnt-li {
+	font-size: 0.35rem;
+    line-height: 0.5rem;
+    border-bottom: 1px solid #999;
+    padding: 0.2rem;
+}
+.t-cnt-error {
+	color: #d81e06;
+}
+.t-cnt-warn {
+	color: #e98f36;
+}
+.t-cnt-info {
+	color: #0231fd;
+}
+.t-cnt-log {
+	color: #000;
+}
+
+
+/*************************** Element *************************/
+#t-content-element div ul {
+	font-size: 0.35rem;
+}
+#t-content-element div ul li {
+	margin-left: 0.4rem;
+    white-space: nowrap;
+}
+.t-element-tag {
+	font-weight: bold;
+    color: #88147f;
+}
+.t-element-attr {
+	margin-left: 20px;
+    color: #112079;
+}
+.t-element-attr i {
+	font-style: normal;
+	color: #e16531;
+}
+
+
+/************************* Network **************************/
+.t-network h3 {
+	padding: 0;
+    margin: 0;
+    font-size: 0.5rem;
+    color: #fff;
+    background: #bfbfbf;
+    font-weight: normal;
+    height: 0.8rem;
+    line-height: 0.8rem;
+    text-indent: 0.5rem;
+}
+#t-content .t-network ul {
+	line-height: 0.5rem;
+    margin: 0.2rem 0.4rem;
+    font-size: 0.35rem;
+}
+.t-network-resource-name, .t-network-resource-time, .t-network-resource-url {
+	margin-right: 0.3rem;
+	white-space: nowrap;
+}
+.t-network-resource-name {
+	color: #000;
+}
+.t-network-resource-time, .t-network-xhr-method, .t-network-xhr-time {
+    color: #707070;
+}
+.t-network-resource-url, .t-network-xhr-url {
+	color: #13227a;
+    display: block;
+}
+.t-network-resource-p, .t-network-xhr-p {
+	padding: 0;
+    margin: 0;
+    line-height: 0.5rem;
+    border-bottom: 1px #999 solid;
+    padding: 0.1rem 0;
+}
+.t-network-xhr-name, .t-network-xhr-status, .t-network-xhr-method, 
+.t-network-xhr-time, .t-network-xhr-url {
+	margin-right: 0.3rem;
+}
+.t-network-xhr-status {
+	color: #ea9518;
+}
+.t-network-xhr-name {
+	display: block;
+}
+.t-network-xhrCnt-back {
+	background: url(../img/back2.png) center/0.4rem 0.4rem no-repeat;
+	float: left;
+    height: 0.8rem;
+    padding: 0;
+    margin: 0;
+    border: none;
+    width: 0.8rem;
+}
+.t-network-xhrCnt-url {
+	float: left;
+    height: 0.8rem;
+    line-height: 0.8rem;
+    margin-left: 0.2rem;
+}
+.t-network-xhrCnt-header {
+	background: #ccc;
+}
+.t-network-xhrCnt-detailUl li {
+	border-bottom: 1px solid #ccc;
+}
+.t-network-xhrCnt {
+	display: none;
+}
+.t-network-xhr-name.t-error {
+	color: #d81e06;
+}
